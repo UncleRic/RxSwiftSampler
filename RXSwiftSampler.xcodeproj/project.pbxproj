@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */; };
 		18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF01F96A2F200776F78 /* AppDelegate.swift */; };
 		18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF21F96A2F200776F78 /* MainViewController.swift */; };
 		18E23FF61F96A2F200776F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E23FF41F96A2F200776F78 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAssets.swift; sourceTree = "<group>"; };
 		18E23FED1F96A2F200776F78 /* RXSwiftSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E23FF01F96A2F200776F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E23FF21F96A2F200776F78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				18E23FF01F96A2F200776F78 /* AppDelegate.swift */,
 				18E23FF21F96A2F200776F78 /* MainViewController.swift */,
+				181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */,
 				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18E23FF71F96A2F200776F78 /* Assets.xcassets */,
 				18E23FF91F96A2F200776F78 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 			files = (
 				18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */,
 				18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */,
+				181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
