@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     let data = Observable.of([
@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
     
     // Note: You don't need UITableViewDelegate nor UITableViewDataSource methods with RX.
     //       No more cell dequeing!  ...no need to regenerating the tableview cell!
+    // -----------------------------------------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,17 @@ class MainViewController: UIViewController {
         tableView.rx.modelSelected(RxProject.self)
             .subscribe(onNext: {
                 print("You selected:", $0)
+                self.doSomething()
             })
             .disposed(by: disposeBag)
     }
-
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func doSomething() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }

@@ -80,6 +80,37 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="cjk-eh-mJT">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cdR-fg-WzU" customClass="LoginViewController" customModule="RXSwiftSampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bbS-io-v3a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Validator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCW-aK-QFS">
+                                <rect key="frame" x="40" y="40" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mzc-5u-ddh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="PCW-aK-QFS" secondAttribute="trailing" constant="40" id="2f8-hJ-2b3"/>
+                            <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
+                            <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lH4-Sw-nqz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJC-qJ-KDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184.8" y="142.57871064467767"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="auG-2E-hOj">
             <objects>
