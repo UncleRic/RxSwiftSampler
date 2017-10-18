@@ -19,9 +19,13 @@ class LoginViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     let loginViewModel = LoginViewModel()
+    let buttonTapped = PublishSubject<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loginButton.isEnabled = false
+        self.loginButton.backgroundColor = .gray
         
         tapGestureRecognizer.rx.event
             .bind { [unowned self] _ in
@@ -31,13 +35,22 @@ class LoginViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        // The Text Fields:
         _ = emailTextField.rx.text.map {$0 ?? ""}.bind(to: loginViewModel.emailText)
         _ = passwordTextField.rx.text.map {$0 ?? ""}.bind(to: loginViewModel.passwordText)
         _ = loginViewModel.isValid.bind(to: loginButton.rx.isEnabled)
         loginViewModel.isValid.subscribe(onNext: {[unowned self] isValid in
             self.loginLabel.text = isValid ? "Enabled" : "Not Enabled"
             self.loginLabel.textColor = isValid ? .green : .red
+            self.loginButton.isEnabled = isValid
+            self.loginButton.backgroundColor = isValid ? .green : .gray
         }).disposed(by: disposeBag)
         
+        // The Button:
+        loginButton.rx.tap.map {"Tapped!"}.bind(to: buttonTapped).disposed(by: disposeBag)
+        buttonTapped.subscribe({_ in
+            self.loginLabel.textColor = .brown
+            self.loginLabel.text = "Tapped!"
+        }).disposed(by: disposeBag)
     }
 }

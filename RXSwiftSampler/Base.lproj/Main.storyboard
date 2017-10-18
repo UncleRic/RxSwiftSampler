@@ -16,6 +16,9 @@
         <array key="Optima.ttc">
             <string>Optima-Regular</string>
         </array>
+        <array key="Palatino.ttc">
+            <string>Palatino-Roman</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Main View Controller-->
@@ -138,12 +141,19 @@
                                 <color key="textColor" red="1" green="0.052104368810000003" blue="0.069862782959999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type in any 3+ characters for both E-Mail and Password to 'Enable' the Login button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-Tp-7Xl">
+                                <rect key="frame" x="40" y="368" width="295" height="207"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="2xA-Tp-7Xl" firstAttribute="top" secondItem="9Pa-Ym-l3T" secondAttribute="bottom" constant="53" id="0QS-2i-G9M"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="PCW-aK-QFS" secondAttribute="trailing" constant="40" id="2f8-hJ-2b3"/>
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="6HO-sa-OvR"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="cSa-kU-6YZ" secondAttribute="trailing" constant="40" id="82I-AR-mF0"/>
+                            <constraint firstItem="2xA-Tp-7Xl" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="B1s-w3-N0n"/>
                             <constraint firstItem="CN3-Tf-Gik" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="OJv-mr-pul"/>
                             <constraint firstItem="CN3-Tf-Gik" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="82" id="P8C-C4-XIf"/>
                             <constraint firstItem="cSa-kU-6YZ" firstAttribute="top" secondItem="CN3-Tf-Gik" secondAttribute="bottom" constant="11" id="PTc-zF-E7h"/>
@@ -151,6 +161,8 @@
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="top" secondItem="ZhT-Nf-Evk" secondAttribute="bottom" constant="23" id="i7D-LP-nOa"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="2xA-Tp-7Xl" secondAttribute="bottom" constant="92" id="jbw-9U-l9p"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="2xA-Tp-7Xl" secondAttribute="trailing" constant="40" id="lP2-1L-ewx"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="9Pa-Ym-l3T" secondAttribute="trailing" constant="40" id="oxr-xE-1e6"/>
                             <constraint firstItem="ZhT-Nf-Evk" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="qLU-yS-qEu"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="ZhT-Nf-Evk" secondAttribute="trailing" constant="40" id="uEf-WJ-wbx"/>
