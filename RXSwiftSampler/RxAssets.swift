@@ -19,7 +19,7 @@ struct RxProject {
 }
 
 extension RxProject: CustomStringConvertible {
-    var description:String {
+    var description: String {
         return "\(name): \(desc)"
     }
 }

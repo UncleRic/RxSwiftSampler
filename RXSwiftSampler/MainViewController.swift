@@ -35,10 +35,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         data.asDriver(onErrorJustReturn: [])
-            .drive(tableView.rx.items(cellIdentifier: "Cell")) { (_, RxProject, cell) in
+            .drive(tableView.rx.items(cellIdentifier: "Cell")) { (_, rxProject, cell) in
                 // Configure each cell (without the dequeuing):
-                cell.textLabel?.text = RxProject.name
-                cell.detailTextLabel?.text = RxProject.desc
+                cell.textLabel?.text = rxProject.name
+                cell.detailTextLabel?.text = rxProject.desc
             }
             .disposed(by: disposeBag)
         

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */; };
 		181ACA9F1F96BEE10047DC33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */; };
+		181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACAA11F96C7850047DC33 /* LoginViewModel.swift */; };
 		18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF01F96A2F200776F78 /* AppDelegate.swift */; };
 		18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF21F96A2F200776F78 /* MainViewController.swift */; };
 		18E23FF61F96A2F200776F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E23FF41F96A2F200776F78 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAssets.swift; sourceTree = "<group>"; };
 		181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		181ACAA11F96C7850047DC33 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18E23FED1F96A2F200776F78 /* RXSwiftSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E23FF01F96A2F200776F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E23FF21F96A2F200776F78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181ACAA01F96C7620047DC33 /* Login Validator */ = {
+			isa = PBXGroup;
+			children = (
+				181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */,
+				181ACAA11F96C7850047DC33 /* LoginViewModel.swift */,
+			);
+			path = "Login Validator";
+			sourceTree = "<group>";
+		};
 		18E23FE41F96A2F200776F78 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +117,7 @@
 		18E23FEF1F96A2F200776F78 /* RXSwiftSampler */ = {
 			isa = PBXGroup;
 			children = (
-				181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */,
+				181ACAA01F96C7620047DC33 /* Login Validator */,
 				18E23FF01F96A2F200776F78 /* AppDelegate.swift */,
 				18E23FF21F96A2F200776F78 /* MainViewController.swift */,
 				181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */,
@@ -138,6 +149,7 @@
 				18E23FEA1F96A2F200776F78 /* Frameworks */,
 				18E23FEB1F96A2F200776F78 /* Resources */,
 				18E240131F96A96A00776F78 /* Embed Frameworks */,
+				18BF4FA51F97E09500860706 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,6 +238,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18BF4FA51F97E09500860706 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18E23FE91F96A2F200776F78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,6 +262,7 @@
 				181ACA9F1F96BEE10047DC33 /* LoginViewController.swift in Sources */,
 				18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */,
 				18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */,
+				181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */,
 				181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

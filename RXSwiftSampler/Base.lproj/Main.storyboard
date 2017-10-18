@@ -13,6 +13,9 @@
         <array key="Noteworthy.ttc">
             <string>Noteworthy-Light</string>
         </array>
+        <array key="Optima.ttc">
+            <string>Optima-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Main View Controller-->
@@ -97,17 +100,78 @@
                                 <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CN3-Tf-Gik">
+                                <rect key="frame" x="40" y="102" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZQq-dd-Wj0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-kU-6YZ">
+                                <rect key="frame" x="40" y="153" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TRj-PX-xxu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-Nf-Evk">
+                                <rect key="frame" x="40" y="212" width="295" height="40"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.6588235294" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t5k-Om-Wfz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Enabled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-Ym-l3T">
+                                <rect key="frame" x="40" y="275" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yc9-cV-Zhk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.052104368810000003" blue="0.069862782959999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="PCW-aK-QFS" secondAttribute="trailing" constant="40" id="2f8-hJ-2b3"/>
+                            <constraint firstItem="9Pa-Ym-l3T" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="6HO-sa-OvR"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="cSa-kU-6YZ" secondAttribute="trailing" constant="40" id="82I-AR-mF0"/>
+                            <constraint firstItem="CN3-Tf-Gik" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="OJv-mr-pul"/>
+                            <constraint firstItem="CN3-Tf-Gik" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="82" id="P8C-C4-XIf"/>
+                            <constraint firstItem="cSa-kU-6YZ" firstAttribute="top" secondItem="CN3-Tf-Gik" secondAttribute="bottom" constant="11" id="PTc-zF-E7h"/>
+                            <constraint firstItem="ZhT-Nf-Evk" firstAttribute="top" secondItem="cSa-kU-6YZ" secondAttribute="bottom" constant="19" id="asV-v7-hd2"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
+                            <constraint firstItem="9Pa-Ym-l3T" firstAttribute="top" secondItem="ZhT-Nf-Evk" secondAttribute="bottom" constant="23" id="i7D-LP-nOa"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="9Pa-Ym-l3T" secondAttribute="trailing" constant="40" id="oxr-xE-1e6"/>
+                            <constraint firstItem="ZhT-Nf-Evk" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="qLU-yS-qEu"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="ZhT-Nf-Evk" secondAttribute="trailing" constant="40" id="uEf-WJ-wbx"/>
+                            <constraint firstItem="cSa-kU-6YZ" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="yBW-Bu-bu5"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="CN3-Tf-Gik" secondAttribute="trailing" constant="40" id="zEv-G8-ovY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lH4-Sw-nqz"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qm2-2k-876" appends="YES" id="kZa-sB-MuS"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="CN3-Tf-Gik" id="1oP-GY-imp"/>
+                        <outlet property="loginButton" destination="ZhT-Nf-Evk" id="TR0-T7-Ivz"/>
+                        <outlet property="loginLabel" destination="9Pa-Ym-l3T" id="TsX-ay-BFW"/>
+                        <outlet property="passwordTextField" destination="cSa-kU-6YZ" id="5qD-2w-V32"/>
+                        <outlet property="tapGestureRecognizer" destination="qm2-2k-876" id="1hA-lh-ae5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJC-qJ-KDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qm2-2k-876"/>
             </objects>
             <point key="canvasLocation" x="1184.8" y="142.57871064467767"/>
         </scene>
