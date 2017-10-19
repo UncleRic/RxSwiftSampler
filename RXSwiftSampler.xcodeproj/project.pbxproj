@@ -139,11 +139,11 @@
 		18E23FEF1F96A2F200776F78 /* RXSwiftSampler */ = {
 			isa = PBXGroup;
 			children = (
+				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18BF4FA91F97EFC200860706 /* Main */,
 				181ACAA01F96C7620047DC33 /* Login Validator */,
 				18BF4FA61F97EB8800860706 /* Read Stored Data */,
 				18E23FF01F96A2F200776F78 /* AppDelegate.swift */,
-				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18E23FF71F96A2F200776F78 /* Assets.xcassets */,
 				18E23FF91F96A2F200776F78 /* LaunchScreen.storyboard */,
 				18E23FFC1F96A2F200776F78 /* Info.plist */,

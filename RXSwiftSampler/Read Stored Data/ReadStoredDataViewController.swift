@@ -12,9 +12,11 @@ import RxCocoa
 import RxSwift
 
 class ReadStoredDataViewController: UIViewController {
-
+    
     @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var readWriteButton: UIButton!
     
     let disposeBag = DisposeBag()
     
@@ -45,11 +47,11 @@ class ReadStoredDataViewController: UIViewController {
         }
         
         guard let data = FileManager.default.contents(atPath: path) else {
-             return Single.just("File Unreadable")
+            return Single.just("File Unreadable")
         }
         
         guard let contents = String(data:data, encoding:.utf8) else {
-             return Single.just("File Encoding Failed")
+            return Single.just("File Encoding Failed")
         }
         
         return Single.just(contents)
@@ -58,7 +60,21 @@ class ReadStoredDataViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     // Action Methods
     
-    @IBAction func readAction() {
+    @IBAction func readwriteToggle(_ sender: UISwitch) {
+        let isRead = !sender.isOn
+        
+        if isRead {
+            readWriteButton.setTitle("Read from Disk", for: .normal)
+            pageTitle.text = "Read Stored Disk"
+        } else {
+            readWriteButton.setTitle("Write to Disk", for: .normal)
+            pageTitle.text = "Write Stored Disk"
+        }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func readwriteAction() {
         contentsOfTextFile(named: "Jonathan")
             .subscribe {
                 switch $0 {

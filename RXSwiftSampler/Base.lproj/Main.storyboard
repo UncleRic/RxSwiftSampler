@@ -207,17 +207,26 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s" userLabel="Read Write Button">
                                 <rect key="frame" x="262" y="440" width="91" height="30"/>
-                                <state key="normal" title="Read File"/>
+                                <state key="normal" title="Read from File"/>
                                 <connections>
-                                    <action selector="readAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="mj0-FV-a9S"/>
+                                    <action selector="readwriteAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="ArM-Tv-9i3"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-ir-dam" userLabel="Read Write Toggle">
+                                <rect key="frame" x="40" y="474" width="51" height="31"/>
+                                <connections>
+                                    <action selector="readwriteToggle:" destination="3ho-lV-BdY" eventType="valueChanged" id="442-d5-CGB"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.75012630219999998" green="1" blue="0.74478548769999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="iTr-ir-dam" secondAttribute="bottom" constant="162" id="0Jj-Qf-f9Z"/>
+                            <constraint firstItem="0K0-8F-v6s" firstAttribute="top" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="17" id="2sJ-xs-b6x"/>
+                            <constraint firstItem="iTr-ir-dam" firstAttribute="leading" secondItem="lTW-fk-fSA" secondAttribute="leading" id="6rL-KM-n7m"/>
                             <constraint firstItem="0K0-8F-v6s" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="262" id="7cD-Es-hBO"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="lTW-fk-fSA" secondAttribute="trailing" constant="40" id="FFC-l3-ywm"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="0K0-8F-v6s" secondAttribute="trailing" constant="22" id="Nf2-9H-V5b"/>
@@ -227,6 +236,8 @@
                             <constraint firstItem="0K0-8F-v6s" firstAttribute="top" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="17" id="asb-Dm-WjU"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="0K0-8F-v6s" secondAttribute="bottom" constant="197" id="cOA-sc-H16"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerY" secondItem="M9B-AQ-Zmz" secondAttribute="centerY" constant="-280.5" id="cuL-eZ-nLw"/>
+                            <constraint firstItem="lTW-fk-fSA" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="40" id="ffp-Hx-wYZ"/>
+                            <constraint firstItem="iTr-ir-dam" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="40" id="mdk-5S-Erv"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerX" secondItem="M9B-AQ-Zmz" secondAttribute="centerX" constant="-3.5" id="un1-O1-Rq4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M9B-AQ-Zmz"/>
@@ -235,6 +246,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="pageTitle" destination="JFZ-wE-FaE" id="edK-7j-q4Q"/>
+                        <outlet property="readWriteButton" destination="0K0-8F-v6s" id="fSv-Bg-k2e"/>
                         <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
                         <outlet property="textView" destination="lTW-fk-fSA" id="hYa-y0-fKn"/>
                     </connections>
