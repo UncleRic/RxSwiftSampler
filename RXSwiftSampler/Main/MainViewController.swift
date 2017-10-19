@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     let data = Observable.of([
         RxProject(topic: .one, name: "Login Validator", chapter: "Variable"),
-        RxProject(topic: .two, name: "File Reader", chapter: "Single"),
+        RxProject(topic: .two, name: "File Reader", chapter: "Single Trait"),
         RxProject(topic: .three, name: "Serg Dort", chapter: "sergdort"),
         RxProject(name: "Mo Ramezanpoor", chapter: "mohsenr"),
         RxProject(name: "Carlos García", chapter: "carlosypunto"),
