@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: UIViewController {
-    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -27,9 +27,9 @@ class LoginViewController: UIViewController {
         self.loginButton.isEnabled = false
         self.loginButton.backgroundColor = .gray
         
-        tapGestureRecognizer.rx.event
+        swipeGestureRecognizer.rx.event
             .bind { [unowned self] _ in
-                print("Tap Gesture")
+                print("Swipe Gesture")
                 self.view.endEditing(true)
                 self.dismiss(animated: true, completion: nil)
             }

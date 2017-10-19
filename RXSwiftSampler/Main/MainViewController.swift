@@ -14,16 +14,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let data = Observable.of([
-        RxProject(topic: .one, name: "Login Validator", desc: "Working with Variable"),
-        RxProject(topic: .two, name: "File Reader", desc: "yury"),
-        RxProject(topic: .three, name: "Serg Dort", desc: "sergdort"),
-        RxProject(name: "Mo Ramezanpoor", desc: "mohsenr"),
-        RxProject(name: "Carlos García", desc: "carlosypunto"),
-        RxProject(name: "Scott Gardner", desc: "scotteg"),
-        RxProject(name: "Nobuo Saito", desc: "tarunon"),
-        RxProject(name: "Junior B.", desc: "bontoJR"),
-        RxProject(name: "Jesse Farless", desc: "solidcell"),
-        RxProject(name: "Jamie Pinkham", desc: "jamiepinkham")
+        RxProject(topic: .one, name: "Login Validator", chapter: "Variable"),
+        RxProject(topic: .two, name: "File Reader", chapter: "Single"),
+        RxProject(topic: .three, name: "Serg Dort", chapter: "sergdort"),
+        RxProject(name: "Mo Ramezanpoor", chapter: "mohsenr"),
+        RxProject(name: "Carlos García", chapter: "carlosypunto"),
+        RxProject(name: "Scott Gardner", chapter: "scotteg"),
+        RxProject(name: "Nobuo Saito", chapter: "tarunon"),
+        RxProject(name: "Junior B.", chapter: "bontoJR"),
+        RxProject(name: "Jesse Farless", chapter: "solidcell"),
+        RxProject(name: "Jamie Pinkham", chapter: "jamiepinkham")
         ])
     
     let disposeBag = DisposeBag()
@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
             .drive(tableView.rx.items(cellIdentifier: "Cell")) { (_, rxProject, cell) in
                 // Configure each cell (without the dequeuing):
                 cell.textLabel?.text = rxProject.name
-                cell.detailTextLabel?.text = rxProject.desc
+                cell.detailTextLabel?.text = rxProject.chapter
             }
             .disposed(by: disposeBag)
         

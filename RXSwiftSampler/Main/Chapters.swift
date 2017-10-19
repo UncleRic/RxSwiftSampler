@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum AssetItem {
+enum Chapter {
     case zero
     case one
     case two
@@ -16,19 +16,19 @@ enum AssetItem {
 }
 
 struct RxProject {
-    let topic: AssetItem
+    let topic: Chapter
     let name: String
-    let desc: String
+    let chapter: String
     
-    init(topic: AssetItem = .zero, name: String, desc: String) {
+    init(topic: Chapter = .zero, name: String, chapter: String) {
         self.topic = topic
         self.name = name
-        self.desc = desc
+        self.chapter = chapter
     }
 }
 
 extension RxProject: CustomStringConvertible {
     var description: String {
-        return "\(topic), \(name), \(desc)"
+        return "\(topic), \(name), \(chapter)"
     }
 }

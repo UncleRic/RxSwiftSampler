@@ -141,8 +141,8 @@
                                 <color key="textColor" red="1" green="0.052104368810000003" blue="0.069862782959999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type in any 3+ characters for both E-Mail and Password to 'Enable' the Login button." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-Tp-7Xl">
-                                <rect key="frame" x="40" y="368" width="295" height="207"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Type in any 3+ characters for both E-Mail and Password to 'Enable' the Login button." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-Tp-7Xl">
+                                <rect key="frame" x="40" y="368" width="295" height="97"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -161,7 +161,7 @@
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="top" secondItem="ZhT-Nf-Evk" secondAttribute="bottom" constant="23" id="i7D-LP-nOa"/>
-                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="2xA-Tp-7Xl" secondAttribute="bottom" constant="92" id="jbw-9U-l9p"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="2xA-Tp-7Xl" secondAttribute="bottom" constant="202" id="jbw-9U-l9p"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="2xA-Tp-7Xl" secondAttribute="trailing" constant="40" id="lP2-1L-ewx"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="9Pa-Ym-l3T" secondAttribute="trailing" constant="40" id="oxr-xE-1e6"/>
                             <constraint firstItem="ZhT-Nf-Evk" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="qLU-yS-qEu"/>
@@ -171,7 +171,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lH4-Sw-nqz"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="qm2-2k-876" appends="YES" id="kZa-sB-MuS"/>
+                            <outletCollection property="gestureRecognizers" destination="8Mk-wz-H1a" appends="YES" id="sgg-Eu-yOe"/>
                         </connections>
                     </view>
                     <connections>
@@ -179,13 +179,13 @@
                         <outlet property="loginButton" destination="ZhT-Nf-Evk" id="TR0-T7-Ivz"/>
                         <outlet property="loginLabel" destination="9Pa-Ym-l3T" id="TsX-ay-BFW"/>
                         <outlet property="passwordTextField" destination="cSa-kU-6YZ" id="5qD-2w-V32"/>
-                        <outlet property="tapGestureRecognizer" destination="qm2-2k-876" id="1hA-lh-ae5"/>
+                        <outlet property="swipeGestureRecognizer" destination="8Mk-wz-H1a" id="dEa-bi-R3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJC-qJ-KDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="qm2-2k-876"/>
+                <swipeGestureRecognizer direction="right" id="8Mk-wz-H1a"/>
             </objects>
-            <point key="canvasLocation" x="1184.8" y="142.57871064467767"/>
+            <point key="canvasLocation" x="1364" y="143.47826086956522"/>
         </scene>
         <!--Read Stored Data View Controller-->
         <scene sceneID="2R8-DH-gqS">
@@ -201,10 +201,31 @@
                                 <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lTW-fk-fSA">
+                                <rect key="frame" x="40" y="185" width="295" height="238"/>
+                                <color key="textColor" red="0.29851959219624247" green="0.060807735128487084" blue="0.6923828125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s">
+                                <rect key="frame" x="262" y="440" width="91" height="30"/>
+                                <state key="normal" title="Read File"/>
+                                <connections>
+                                    <action selector="readAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="mj0-FV-a9S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.75012630219999998" green="1" blue="0.74478548769999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="0K0-8F-v6s" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="262" id="7cD-Es-hBO"/>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="lTW-fk-fSA" secondAttribute="trailing" constant="40" id="FFC-l3-ywm"/>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="0K0-8F-v6s" secondAttribute="trailing" constant="22" id="Nf2-9H-V5b"/>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="244" id="Vjq-NX-ZKh"/>
+                            <constraint firstItem="lTW-fk-fSA" firstAttribute="top" secondItem="JFZ-wE-FaE" secondAttribute="bottom" constant="103.5" id="ZD2-x3-NoJ"/>
+                            <constraint firstItem="lTW-fk-fSA" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="40" id="aC8-60-Nnm"/>
+                            <constraint firstItem="0K0-8F-v6s" firstAttribute="top" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="17" id="asb-Dm-WjU"/>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="0K0-8F-v6s" secondAttribute="bottom" constant="197" id="cOA-sc-H16"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerY" secondItem="M9B-AQ-Zmz" secondAttribute="centerY" constant="-280.5" id="cuL-eZ-nLw"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerX" secondItem="M9B-AQ-Zmz" secondAttribute="centerX" constant="-3.5" id="un1-O1-Rq4"/>
                         </constraints>
@@ -215,6 +236,7 @@
                     </view>
                     <connections>
                         <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
+                        <outlet property="textView" destination="lTW-fk-fSA" id="hYa-y0-fKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1E-4B-ldh" userLabel="First Responder" sceneMemberID="firstResponder"/>
