@@ -14,9 +14,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let data = Observable.of([
-        RxProject(name: "Login Validator", desc: "Working with Variable"),
-        RxProject(name: "File Reader", desc: "yury"),
-        RxProject(name: "Serg Dort", desc: "sergdort"),
+        RxProject(topic: .one, name: "Login Validator", desc: "Working with Variable"),
+        RxProject(topic: .two, name: "File Reader", desc: "yury"),
+        RxProject(topic: .three, name: "Serg Dort", desc: "sergdort"),
         RxProject(name: "Mo Ramezanpoor", desc: "mohsenr"),
         RxProject(name: "Carlos García", desc: "carlosypunto"),
         RxProject(name: "Scott Gardner", desc: "scotteg"),
@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         data.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "Cell")) { (_, rxProject, cell) in
                 // Configure each cell (without the dequeuing):
@@ -46,17 +47,21 @@ class MainViewController: UIViewController {
         tableView.rx.modelSelected(RxProject.self)
             .subscribe(onNext: {
                 print("You selected:", $0)
-                self.doSomething()
+                
+                switch $0.topic {
+                case .one:
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                case .two:
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadStoredDataVC") {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                default:
+                    print("default")
+                }
             })
             .disposed(by: disposeBag)
+        
     }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
-    func doSomething() {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-        self.present(vc, animated: true, completion: nil)
-    }
-    
 }

@@ -187,6 +187,41 @@
             </objects>
             <point key="canvasLocation" x="1184.8" y="142.57871064467767"/>
         </scene>
+        <!--Read Stored Data View Controller-->
+        <scene sceneID="2R8-DH-gqS">
+            <objects>
+                <viewController storyboardIdentifier="ReadStoredDataVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3ho-lV-BdY" customClass="ReadStoredDataViewController" customModule="RXSwiftSampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTL-8x-GJl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Stored Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFZ-wE-FaE">
+                                <rect key="frame" x="106" y="44.5" width="156.5" height="37"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75012630219999998" green="1" blue="0.74478548769999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerY" secondItem="M9B-AQ-Zmz" secondAttribute="centerY" constant="-280.5" id="cuL-eZ-nLw"/>
+                            <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerX" secondItem="M9B-AQ-Zmz" secondAttribute="centerX" constant="-3.5" id="un1-O1-Rq4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M9B-AQ-Zmz"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="I08-15-7nt" appends="YES" id="qDp-F4-AJ8"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1E-4B-ldh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="I08-15-7nt"/>
+            </objects>
+            <point key="canvasLocation" x="1888.8" y="51.724137931034484"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="auG-2E-hOj">
             <objects>

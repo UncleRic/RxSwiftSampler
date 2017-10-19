@@ -10,6 +10,7 @@
 		181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */; };
 		181ACA9F1F96BEE10047DC33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */; };
 		181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACAA11F96C7850047DC33 /* LoginViewModel.swift */; };
+		18BF4FA81F97EBC500860706 /* ReadStoredDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */; };
 		18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF01F96A2F200776F78 /* AppDelegate.swift */; };
 		18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF21F96A2F200776F78 /* MainViewController.swift */; };
 		18E23FF61F96A2F200776F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E23FF41F96A2F200776F78 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAssets.swift; sourceTree = "<group>"; };
 		181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		181ACAA11F96C7850047DC33 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadStoredDataViewController.swift; path = "Read Stored Data/ReadStoredDataViewController.swift"; sourceTree = "<group>"; };
 		18E23FED1F96A2F200776F78 /* RXSwiftSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E23FF01F96A2F200776F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E23FF21F96A2F200776F78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,23 @@
 			path = "Login Validator";
 			sourceTree = "<group>";
 		};
+		18BF4FA61F97EB8800860706 /* Read Stored Data */ = {
+			isa = PBXGroup;
+			children = (
+				18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */,
+			);
+			name = "Read Stored Data";
+			sourceTree = "<group>";
+		};
+		18BF4FA91F97EFC200860706 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18E23FF21F96A2F200776F78 /* MainViewController.swift */,
+				181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		18E23FE41F96A2F200776F78 = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +136,10 @@
 		18E23FEF1F96A2F200776F78 /* RXSwiftSampler */ = {
 			isa = PBXGroup;
 			children = (
+				18BF4FA91F97EFC200860706 /* Main */,
 				181ACAA01F96C7620047DC33 /* Login Validator */,
+				18BF4FA61F97EB8800860706 /* Read Stored Data */,
 				18E23FF01F96A2F200776F78 /* AppDelegate.swift */,
-				18E23FF21F96A2F200776F78 /* MainViewController.swift */,
-				181ACA9A1F96ADDB0047DC33 /* RxAssets.swift */,
 				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18E23FF71F96A2F200776F78 /* Assets.xcassets */,
 				18E23FF91F96A2F200776F78 /* LaunchScreen.storyboard */,
@@ -264,6 +283,7 @@
 				18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */,
 				181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */,
 				181ACA9B1F96ADDB0047DC33 /* RxAssets.swift in Sources */,
+				18BF4FA81F97EBC500860706 /* ReadStoredDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

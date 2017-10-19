@@ -6,13 +6,22 @@
 // -----------------------------------------------------------------------------------------------------
 
 import Foundation
+import UIKit
+
+enum AssetItem {
+    case zero
+    case one
+    case two
+    case three
+}
 
 struct RxProject {
-    
+    let topic: AssetItem
     let name: String
     let desc: String
     
-    init(name: String, desc: String) {
+    init(topic: AssetItem = .zero, name: String, desc: String) {
+        self.topic = topic
         self.name = name
         self.desc = desc
     }
@@ -20,6 +29,6 @@ struct RxProject {
 
 extension RxProject: CustomStringConvertible {
     var description: String {
-        return "\(name): \(desc)"
+        return "\(topic), \(name), \(desc)"
     }
 }
