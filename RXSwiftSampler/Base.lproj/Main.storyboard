@@ -217,7 +217,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-ir-dam" userLabel="Read Write Toggle">
                                 <rect key="frame" x="40" y="474" width="51" height="31"/>
                                 <connections>
-                                    <action selector="readwriteToggle:" destination="3ho-lV-BdY" eventType="valueChanged" id="442-d5-CGB"/>
+                                    <action selector="readwriteToggle:" destination="3ho-lV-BdY" eventType="touchUpInside" id="eW6-IW-Jdg"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -247,7 +247,8 @@
                     </view>
                     <connections>
                         <outlet property="pageTitle" destination="JFZ-wE-FaE" id="edK-7j-q4Q"/>
-                        <outlet property="readWriteButton" destination="0K0-8F-v6s" id="fSv-Bg-k2e"/>
+                        <outlet property="readwriteButton" destination="0K0-8F-v6s" id="fSv-Bg-k2e"/>
+                        <outlet property="readwriteToggle" destination="iTr-ir-dam" id="sR7-vg-SYn"/>
                         <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
                         <outlet property="textView" destination="lTW-fk-fSA" id="hYa-y0-fKn"/>
                     </connections>

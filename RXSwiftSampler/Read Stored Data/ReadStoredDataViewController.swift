@@ -16,7 +16,8 @@ class ReadStoredDataViewController: UIViewController {
     @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var readWriteButton: UIButton!
+    @IBOutlet weak var readwriteButton: UIButton!
+    @IBOutlet weak var readwriteToggle: UISwitch!
     
     let disposeBag = DisposeBag()
     
@@ -29,6 +30,15 @@ class ReadStoredDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        readwriteToggle.rx.isOn.bind { [unowned self] isWrite in
+            if isWrite {
+                self.pageTitle.text = "Write Stored Data"
+            } else {
+                self.pageTitle.text = "Read Stored Data"
+            }
+            }.dispose()
+        
         swipeGestureRecognizer.rx.event
             .bind { [unowned self] _ in
                 print("Swipe Gesture")
@@ -64,10 +74,10 @@ class ReadStoredDataViewController: UIViewController {
         let isRead = !sender.isOn
         
         if isRead {
-            readWriteButton.setTitle("Read from Disk", for: .normal)
+            readwriteButton.setTitle("Read from Disk", for: .normal)
             pageTitle.text = "Read Stored Disk"
         } else {
-            readWriteButton.setTitle("Write to Disk", for: .normal)
+            readwriteButton.setTitle("Write to Disk", for: .normal)
             pageTitle.text = "Write Stored Disk"
         }
     }
