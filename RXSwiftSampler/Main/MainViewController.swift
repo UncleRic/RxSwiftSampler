@@ -57,6 +57,10 @@ class MainViewController: UIViewController {
                     if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadStoredDataVC") {
                         self.present(vc, animated: true, completion: nil)
                     }
+                case .three:
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CollectionVC") {
+                        self.present(vc, animated: true, completion: nil)
+                    }
                 default:
                     print("default")
                 }
