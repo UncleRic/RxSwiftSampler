@@ -216,9 +216,6 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-ir-dam" userLabel="Read Write Toggle">
                                 <rect key="frame" x="40" y="474" width="51" height="31"/>
-                                <connections>
-                                    <action selector="readwriteToggle:" destination="3ho-lV-BdY" eventType="touchUpInside" id="eW6-IW-Jdg"/>
-                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.75012630219999998" green="1" blue="0.74478548769999997" alpha="1" colorSpace="calibratedRGB"/>

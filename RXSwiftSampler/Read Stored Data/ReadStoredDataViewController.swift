@@ -19,6 +19,8 @@ class ReadStoredDataViewController: UIViewController {
     @IBOutlet weak var readwriteButton: UIButton!
     @IBOutlet weak var readwriteToggle: UISwitch!
     
+    var IOButton = Variable(false)
+    
     let disposeBag = DisposeBag()
     
     enum FileReadError: Error {
@@ -31,13 +33,21 @@ class ReadStoredDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        readwriteToggle.rx.isOn.bind { [unowned self] isWrite in
-            if isWrite {
-                self.pageTitle.text = "Write Stored Data"
-            } else {
-                self.pageTitle.text = "Read Stored Data"
-            }
-            }.dispose()
+        let onOffSwitch = Variable(true)
+        
+        onOffSwitch.asObservable()
+            .subscribe (onNext: { [unowned self] isWrite in
+                if isWrite {
+                    self.readwriteButton.setTitle("Write to Disk", for: .normal)
+                    self.pageTitle.text = "Write Stored Disk"
+                } else {
+                    self.readwriteButton.setTitle("Read from Disk", for: .normal)
+                    self.pageTitle.text = "Read Stored Disk"
+                }
+            }).disposed(by: disposeBag)
+        
+        readwriteToggle.rx.isOn.bind(to: onOffSwitch)
+            .disposed(by: disposeBag)
         
         swipeGestureRecognizer.rx.event
             .bind { [unowned self] _ in
@@ -69,20 +79,6 @@ class ReadStoredDataViewController: UIViewController {
     
     // -----------------------------------------------------------------------------------------------------
     // Action Methods
-    
-    @IBAction func readwriteToggle(_ sender: UISwitch) {
-        let isRead = !sender.isOn
-        
-        if isRead {
-            readwriteButton.setTitle("Read from Disk", for: .normal)
-            pageTitle.text = "Read Stored Disk"
-        } else {
-            readwriteButton.setTitle("Write to Disk", for: .normal)
-            pageTitle.text = "Write Stored Disk"
-        }
-    }
-    
-    // -----------------------------------------------------------------------------------------------------
     
     @IBAction func readwriteAction() {
         contentsOfTextFile(named: "Jonathan")
