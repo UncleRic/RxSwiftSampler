@@ -16,7 +16,7 @@ class ReadStoredDataViewController: UIViewController {
     @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var readwriteButton: UIButton!
+    @IBOutlet weak var writeButton: UIButton!
     @IBOutlet weak var readwriteToggle: UISwitch!
     
     var IOButton = Variable(false)
@@ -37,12 +37,17 @@ class ReadStoredDataViewController: UIViewController {
         
         onOffSwitch.asObservable()
             .subscribe (onNext: { [unowned self] isWrite in
+                self.writeButton.isHidden = !isWrite
+                self.textView.isEditable = isWrite
                 if isWrite {
-                    self.readwriteButton.setTitle("Write to Disk", for: .normal)
+                    self.writeButton.setTitle("Write to Disk", for: .normal)
                     self.pageTitle.text = "Write Stored Disk"
+                    self.textView.backgroundColor = UIColor.white
+                    self.textView.text = ""
                 } else {
-                    self.readwriteButton.setTitle("Read from Disk", for: .normal)
                     self.pageTitle.text = "Read Stored Disk"
+                    self.textView.backgroundColor = UIColor.clear
+                    self.readFromDisk()
                 }
             }).disposed(by: disposeBag)
         
@@ -78,9 +83,8 @@ class ReadStoredDataViewController: UIViewController {
     }
     
     // -----------------------------------------------------------------------------------------------------
-    // Action Methods
     
-    @IBAction func readwriteAction() {
+    private func readFromDisk() {
         contentsOfTextFile(named: "Jonathan")
             .subscribe {
                 switch $0 {
@@ -92,5 +96,21 @@ class ReadStoredDataViewController: UIViewController {
                 }
             }
             .disposed(by: disposeBag)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    // Action Methods
+    
+    @IBAction func writeAction() {
+        
+        guard let path = Bundle.main.path(forResource: "Jonathan", ofType: "txt") else {
+            print(FileReadError.fileNotFound)
+            return
+        }
+        do {
+            try textView.text.write(toFile: path, atomically: true, encoding: .utf8)
+        } catch {
+            textView.text = "Error: \(error.localizedDescription)"
+        }
     }
 }

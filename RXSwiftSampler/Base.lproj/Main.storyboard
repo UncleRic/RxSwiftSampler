@@ -207,11 +207,11 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s" userLabel="Read Write Button">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s" userLabel="Write Button">
                                 <rect key="frame" x="262" y="440" width="91" height="30"/>
-                                <state key="normal" title="Read from File"/>
+                                <state key="normal" title="Write to File"/>
                                 <connections>
-                                    <action selector="readwriteAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="ArM-Tv-9i3"/>
+                                    <action selector="writeAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="aol-fu-A5q"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-ir-dam" userLabel="Read Write Toggle">
@@ -244,10 +244,10 @@
                     </view>
                     <connections>
                         <outlet property="pageTitle" destination="JFZ-wE-FaE" id="edK-7j-q4Q"/>
-                        <outlet property="readwriteButton" destination="0K0-8F-v6s" id="fSv-Bg-k2e"/>
                         <outlet property="readwriteToggle" destination="iTr-ir-dam" id="sR7-vg-SYn"/>
                         <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
                         <outlet property="textView" destination="lTW-fk-fSA" id="hYa-y0-fKn"/>
+                        <outlet property="writeButton" destination="0K0-8F-v6s" id="HKZ-Yz-TRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1E-4B-ldh" userLabel="First Responder" sceneMemberID="firstResponder"/>
