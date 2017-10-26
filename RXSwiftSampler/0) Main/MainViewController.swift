@@ -15,8 +15,8 @@ class MainViewController: UIViewController {
     
     let data = Observable.of([
         RxProject(topic: .one, name: "Login Validator", chapter: "Variable"),
-        RxProject(topic: .two, name: "File Reader", chapter: "Single Trait"),
-        RxProject(topic: .three, name: "Serg Dort", chapter: "sergdort"),
+        RxProject(topic: .two, name: "File I/O", chapter: "Variable, Bind"),
+        RxProject(topic: .three, name: "Serg Dort", chapter: "Collection"),
         RxProject(name: "Mo Ramezanpoor", chapter: "mohsenr"),
         RxProject(name: "Carlos García", chapter: "carlosypunto"),
         RxProject(name: "Scott Gardner", chapter: "scotteg"),
@@ -55,6 +55,10 @@ class MainViewController: UIViewController {
                     }
                 case .two:
                     if let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReadStoredDataVC") {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                case .three:
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CollectionVC") {
                         self.present(vc, animated: true, completion: nil)
                     }
                 default:

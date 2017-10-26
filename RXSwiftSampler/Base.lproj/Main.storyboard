@@ -187,6 +187,42 @@
             </objects>
             <point key="canvasLocation" x="1364" y="143.47826086956522"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Nrc-Wo-NMZ">
+            <objects>
+                <viewController storyboardIdentifier="CollectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ko7-K2-CCs" customClass="CollectionViewController" customModule="RXSwiftSampler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZQ-qK-2p6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP4-Fc-OZg">
+                                <rect key="frame" x="141" y="21" width="93" height="40"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
+                                <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99712616210000005" green="1" blue="0.76878422499999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ma6-f5-Wss" firstAttribute="bottom" secondItem="vP4-Fc-OZg" secondAttribute="bottom" constant="606" id="7TQ-fc-Ns2"/>
+                            <constraint firstItem="vP4-Fc-OZg" firstAttribute="top" secondItem="ma6-f5-Wss" secondAttribute="top" constant="1" id="J9R-0G-Hd0"/>
+                            <constraint firstItem="vP4-Fc-OZg" firstAttribute="leading" secondItem="ma6-f5-Wss" secondAttribute="leading" constant="141" id="pch-ah-iYZ"/>
+                            <constraint firstItem="vP4-Fc-OZg" firstAttribute="centerX" secondItem="ma6-f5-Wss" secondAttribute="centerX" id="qcW-hl-ki2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ma6-f5-Wss"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PBk-ei-ROX" appends="YES" id="S4T-rH-yt6"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="swipeGestureRecognizer" destination="PBk-ei-ROX" id="zlg-Oh-ipB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LmM-1S-Lx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="PBk-ei-ROX"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="1126"/>
+        </scene>
         <!--Read Stored Data View Controller-->
         <scene sceneID="2R8-DH-gqS">
             <objects>
@@ -207,17 +243,23 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-8F-v6s" userLabel="Write Button">
                                 <rect key="frame" x="262" y="440" width="91" height="30"/>
-                                <state key="normal" title="Read File"/>
+                                <state key="normal" title="Write to File"/>
                                 <connections>
-                                    <action selector="readAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="mj0-FV-a9S"/>
+                                    <action selector="writeAction" destination="3ho-lV-BdY" eventType="touchUpInside" id="aol-fu-A5q"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTr-ir-dam" userLabel="Read Write Toggle">
+                                <rect key="frame" x="40" y="474" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.75012630219999998" green="1" blue="0.74478548769999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="iTr-ir-dam" secondAttribute="bottom" constant="162" id="0Jj-Qf-f9Z"/>
+                            <constraint firstItem="0K0-8F-v6s" firstAttribute="top" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="17" id="2sJ-xs-b6x"/>
+                            <constraint firstItem="iTr-ir-dam" firstAttribute="leading" secondItem="lTW-fk-fSA" secondAttribute="leading" id="6rL-KM-n7m"/>
                             <constraint firstItem="0K0-8F-v6s" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="262" id="7cD-Es-hBO"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="lTW-fk-fSA" secondAttribute="trailing" constant="40" id="FFC-l3-ywm"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="trailing" secondItem="0K0-8F-v6s" secondAttribute="trailing" constant="22" id="Nf2-9H-V5b"/>
@@ -227,6 +269,8 @@
                             <constraint firstItem="0K0-8F-v6s" firstAttribute="top" secondItem="lTW-fk-fSA" secondAttribute="bottom" constant="17" id="asb-Dm-WjU"/>
                             <constraint firstItem="M9B-AQ-Zmz" firstAttribute="bottom" secondItem="0K0-8F-v6s" secondAttribute="bottom" constant="197" id="cOA-sc-H16"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerY" secondItem="M9B-AQ-Zmz" secondAttribute="centerY" constant="-280.5" id="cuL-eZ-nLw"/>
+                            <constraint firstItem="lTW-fk-fSA" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="40" id="ffp-Hx-wYZ"/>
+                            <constraint firstItem="iTr-ir-dam" firstAttribute="leading" secondItem="M9B-AQ-Zmz" secondAttribute="leading" constant="40" id="mdk-5S-Erv"/>
                             <constraint firstItem="JFZ-wE-FaE" firstAttribute="centerX" secondItem="M9B-AQ-Zmz" secondAttribute="centerX" constant="-3.5" id="un1-O1-Rq4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M9B-AQ-Zmz"/>
@@ -235,14 +279,17 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="pageTitle" destination="JFZ-wE-FaE" id="edK-7j-q4Q"/>
+                        <outlet property="readwriteToggle" destination="iTr-ir-dam" id="sR7-vg-SYn"/>
                         <outlet property="swipeGestureRecognizer" destination="I08-15-7nt" id="bxm-gE-vtZ"/>
                         <outlet property="textView" destination="lTW-fk-fSA" id="hYa-y0-fKn"/>
+                        <outlet property="writeButton" destination="0K0-8F-v6s" id="HKZ-Yz-TRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1E-4B-ldh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="I08-15-7nt"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="51.724137931034484"/>
+            <point key="canvasLocation" x="2092" y="147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="auG-2E-hOj">
