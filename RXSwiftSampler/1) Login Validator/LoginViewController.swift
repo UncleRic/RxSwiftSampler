@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     let disposeBag = DisposeBag()
     let loginViewModel = LoginViewModel()
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController {
             self.loginLabel.textColor = isValid ? .green : .red
             self.loginButton.isEnabled = isValid
             self.loginButton.backgroundColor = isValid ? .green : .gray
+            self.imageView.isHidden = !isValid
         }).disposed(by: disposeBag)
         
         // The Button:
