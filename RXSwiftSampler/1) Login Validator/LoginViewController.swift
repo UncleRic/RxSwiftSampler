@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var ratAloneButton: UIButton!
     
     let disposeBag = DisposeBag()
     let loginViewModel = LoginViewModel()
@@ -24,8 +25,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loginButton.isEnabled = false
-        self.loginButton.backgroundColor = .gray
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = .gray
         
         swipeGestureRecognizer.rx.event
             .bind { [unowned self] _ in
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController {
             self.loginLabel.textColor = isValid ? .green : .red
             self.loginButton.isEnabled = isValid
             self.loginButton.backgroundColor = isValid ? .green : .gray
+            self.ratAloneButton.isHidden = !isValid
         }).disposed(by: disposeBag)
         
         // The Button:
@@ -52,5 +54,18 @@ class LoginViewController: UIViewController {
             self.loginLabel.textColor = .brown
             self.loginLabel.text = "Tapped!"
         }).disposed(by: disposeBag)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: - Action methods
+    
+    @IBAction func ratAction(_ sender: UIButton) {
+        emailTextField.text = ""
+        passwordTextField.text = ""
+        sender.isHidden = true
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = .gray
+        loginLabel.text = "Not Enabled"
+        loginLabel.textColor = .red
     }
 }

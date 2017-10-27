@@ -146,6 +146,17 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7b-sg-T7Z" userLabel="Rat Alone">
+                                <rect key="frame" x="110.5" y="483" width="154" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="Ek1-gy-NRc"/>
+                                    <constraint firstAttribute="height" constant="139" id="nls-9y-QwU"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="RatAlone"/>
+                                <connections>
+                                    <action selector="ratAction:" destination="cdR-fg-WzU" eventType="touchUpInside" id="cYy-yZ-pg6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -158,7 +169,9 @@
                             <constraint firstItem="CN3-Tf-Gik" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="82" id="P8C-C4-XIf"/>
                             <constraint firstItem="cSa-kU-6YZ" firstAttribute="top" secondItem="CN3-Tf-Gik" secondAttribute="bottom" constant="11" id="PTc-zF-E7h"/>
                             <constraint firstItem="ZhT-Nf-Evk" firstAttribute="top" secondItem="cSa-kU-6YZ" secondAttribute="bottom" constant="19" id="asV-v7-hd2"/>
+                            <constraint firstItem="g7b-sg-T7Z" firstAttribute="centerX" secondItem="lH4-Sw-nqz" secondAttribute="centerX" id="crb-Oq-3ef"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="g7b-sg-T7Z" secondAttribute="bottom" constant="45" id="h6G-pj-0ea"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="top" secondItem="ZhT-Nf-Evk" secondAttribute="bottom" constant="23" id="i7D-LP-nOa"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="2xA-Tp-7Xl" secondAttribute="bottom" constant="202" id="jbw-9U-l9p"/>
@@ -179,6 +192,7 @@
                         <outlet property="loginButton" destination="ZhT-Nf-Evk" id="TR0-T7-Ivz"/>
                         <outlet property="loginLabel" destination="9Pa-Ym-l3T" id="TsX-ay-BFW"/>
                         <outlet property="passwordTextField" destination="cSa-kU-6YZ" id="5qD-2w-V32"/>
+                        <outlet property="ratAloneButton" destination="g7b-sg-T7Z" id="Sxv-lP-cXP"/>
                         <outlet property="swipeGestureRecognizer" destination="8Mk-wz-H1a" id="dEa-bi-R3F"/>
                     </connections>
                 </viewController>
@@ -310,4 +324,7 @@
             <point key="canvasLocation" x="-404" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RatAlone" width="512" height="512"/>
+    </resources>
 </document>
