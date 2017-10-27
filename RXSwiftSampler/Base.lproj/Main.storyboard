@@ -146,13 +146,17 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RatAlone" translatesAutoresizingMaskIntoConstraints="NO" id="Rcw-9T-8fH" userLabel="Rat-Image View">
-                                <rect key="frame" x="127.5" y="427" width="120" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7b-sg-T7Z" userLabel="Rat Alone">
+                                <rect key="frame" x="110.5" y="483" width="154" height="139"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Ly6-cg-Jiv"/>
-                                    <constraint firstAttribute="height" constant="120" id="oR4-4i-QL7"/>
+                                    <constraint firstAttribute="width" constant="154" id="Ek1-gy-NRc"/>
+                                    <constraint firstAttribute="height" constant="139" id="nls-9y-QwU"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" title="Button" image="RatAlone"/>
+                                <connections>
+                                    <action selector="ratAction:" destination="cdR-fg-WzU" eventType="touchUpInside" id="cYy-yZ-pg6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.79795017739999996" green="0.93767279579999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -161,12 +165,13 @@
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="6HO-sa-OvR"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="cSa-kU-6YZ" secondAttribute="trailing" constant="40" id="82I-AR-mF0"/>
                             <constraint firstItem="2xA-Tp-7Xl" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="B1s-w3-N0n"/>
-                            <constraint firstItem="Rcw-9T-8fH" firstAttribute="centerX" secondItem="lH4-Sw-nqz" secondAttribute="centerX" id="Bvu-zb-nds"/>
                             <constraint firstItem="CN3-Tf-Gik" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="OJv-mr-pul"/>
                             <constraint firstItem="CN3-Tf-Gik" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="82" id="P8C-C4-XIf"/>
                             <constraint firstItem="cSa-kU-6YZ" firstAttribute="top" secondItem="CN3-Tf-Gik" secondAttribute="bottom" constant="11" id="PTc-zF-E7h"/>
                             <constraint firstItem="ZhT-Nf-Evk" firstAttribute="top" secondItem="cSa-kU-6YZ" secondAttribute="bottom" constant="19" id="asV-v7-hd2"/>
+                            <constraint firstItem="g7b-sg-T7Z" firstAttribute="centerX" secondItem="lH4-Sw-nqz" secondAttribute="centerX" id="crb-Oq-3ef"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="cz4-4B-qnD"/>
+                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="g7b-sg-T7Z" secondAttribute="bottom" constant="45" id="h6G-pj-0ea"/>
                             <constraint firstItem="PCW-aK-QFS" firstAttribute="top" secondItem="lH4-Sw-nqz" secondAttribute="top" constant="20" id="haF-JI-5nz"/>
                             <constraint firstItem="9Pa-Ym-l3T" firstAttribute="top" secondItem="ZhT-Nf-Evk" secondAttribute="bottom" constant="23" id="i7D-LP-nOa"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="2xA-Tp-7Xl" secondAttribute="bottom" constant="202" id="jbw-9U-l9p"/>
@@ -174,7 +179,6 @@
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="9Pa-Ym-l3T" secondAttribute="trailing" constant="40" id="oxr-xE-1e6"/>
                             <constraint firstItem="ZhT-Nf-Evk" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="qLU-yS-qEu"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="ZhT-Nf-Evk" secondAttribute="trailing" constant="40" id="uEf-WJ-wbx"/>
-                            <constraint firstItem="lH4-Sw-nqz" firstAttribute="bottom" secondItem="Rcw-9T-8fH" secondAttribute="bottom" constant="120" id="xUA-ll-kBl"/>
                             <constraint firstItem="cSa-kU-6YZ" firstAttribute="leading" secondItem="lH4-Sw-nqz" secondAttribute="leading" constant="40" id="yBW-Bu-bu5"/>
                             <constraint firstItem="lH4-Sw-nqz" firstAttribute="trailing" secondItem="CN3-Tf-Gik" secondAttribute="trailing" constant="40" id="zEv-G8-ovY"/>
                         </constraints>
@@ -185,10 +189,10 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="CN3-Tf-Gik" id="1oP-GY-imp"/>
-                        <outlet property="imageView" destination="Rcw-9T-8fH" id="PC1-tb-Z6b"/>
                         <outlet property="loginButton" destination="ZhT-Nf-Evk" id="TR0-T7-Ivz"/>
                         <outlet property="loginLabel" destination="9Pa-Ym-l3T" id="TsX-ay-BFW"/>
                         <outlet property="passwordTextField" destination="cSa-kU-6YZ" id="5qD-2w-V32"/>
+                        <outlet property="ratAloneButton" destination="g7b-sg-T7Z" id="Sxv-lP-cXP"/>
                         <outlet property="swipeGestureRecognizer" destination="8Mk-wz-H1a" id="dEa-bi-R3F"/>
                     </connections>
                 </viewController>
