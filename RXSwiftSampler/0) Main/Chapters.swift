@@ -13,6 +13,7 @@ enum Chapter {
     case one
     case two
     case three
+    case four
 }
 
 struct RxProject {

@@ -10,12 +10,13 @@
 		181ACA9B1F96ADDB0047DC33 /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9A1F96ADDB0047DC33 /* Chapters.swift */; };
 		181ACA9F1F96BEE10047DC33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */; };
 		181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ACAA11F96C7850047DC33 /* LoginViewModel.swift */; };
+		1859C6721FA7CCD400BFE8B1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859C6711FA7CCD400BFE8B1 /* CollectionViewController.swift */; };
+		1859C6751FA7CCE800BFE8B1 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859C6741FA7CCE800BFE8B1 /* NetworkViewController.swift */; };
+		1859C6781FA7CD8F00BFE8B1 /* ReadStoredDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859C6771FA7CD8F00BFE8B1 /* ReadStoredDataViewController.swift */; };
 		187ECB091F9E85C9008E7ABC /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187ECB061F9E85C8008E7ABC /* Differentiator.framework */; };
 		187ECB0A1F9E85C9008E7ABC /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187ECB061F9E85C8008E7ABC /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		187ECB0B1F9E85C9008E7ABC /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187ECB071F9E85C8008E7ABC /* RxDataSources.framework */; };
 		187ECB0C1F9E85C9008E7ABC /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 187ECB071F9E85C8008E7ABC /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18BF4FA81F97EBC500860706 /* ReadStoredDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */; };
-		18C75EA51F99221E005A4133 /* Jonathan.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18C75EA41F99221E005A4133 /* Jonathan.txt */; };
 		18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF01F96A2F200776F78 /* AppDelegate.swift */; };
 		18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23FF21F96A2F200776F78 /* MainViewController.swift */; };
 		18E23FF61F96A2F200776F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E23FF41F96A2F200776F78 /* Main.storyboard */; };
@@ -26,7 +27,6 @@
 		18E240121F96A96A00776F78 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18E240101F96A96A00776F78 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18E240151F96A97B00776F78 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E240141F96A97B00776F78 /* RxSwift.framework */; };
 		18E240161F96A97B00776F78 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18E240141F96A97B00776F78 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18E311A21FA29305004E5E67 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E311A11FA29305004E5E67 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +60,11 @@
 		181ACA9A1F96ADDB0047DC33 /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
 		181ACA9E1F96BEE00047DC33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		181ACAA11F96C7850047DC33 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1859C6711FA7CCD400BFE8B1 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		1859C6741FA7CCE800BFE8B1 /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		1859C6771FA7CD8F00BFE8B1 /* ReadStoredDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadStoredDataViewController.swift; sourceTree = "<group>"; };
 		187ECB061F9E85C8008E7ABC /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Differentiator.framework; sourceTree = "<group>"; };
 		187ECB071F9E85C8008E7ABC /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = "<group>"; };
-		18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadStoredDataViewController.swift; path = "Read Stored Data/ReadStoredDataViewController.swift"; sourceTree = "<group>"; };
-		18C75EA41F99221E005A4133 /* Jonathan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Jonathan.txt; path = Resources/Jonathan.txt; sourceTree = "<group>"; };
 		18E23FED1F96A2F200776F78 /* RXSwiftSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E23FF01F96A2F200776F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E23FF21F96A2F200776F78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		18E240071F96A2F200776F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E240101F96A96A00776F78 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
 		18E240141F96A97B00776F78 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
-		18E311A11FA29305004E5E67 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewController.swift; path = RXSwiftSampler/Collection/CollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +110,28 @@
 			path = "1) Login Validator";
 			sourceTree = "<group>";
 		};
-		18BF4FA61F97EB8800860706 /* 2) Read Stored Data */ = {
+		1859C6701FA7CCD400BFE8B1 /* 3) Collection */ = {
 			isa = PBXGroup;
 			children = (
-				18C75EA41F99221E005A4133 /* Jonathan.txt */,
-				18BF4FA71F97EBC500860706 /* ReadStoredDataViewController.swift */,
+				1859C6711FA7CCD400BFE8B1 /* CollectionViewController.swift */,
 			);
-			name = "2) Read Stored Data";
+			path = "3) Collection";
+			sourceTree = "<group>";
+		};
+		1859C6731FA7CCE800BFE8B1 /* 4) Network */ = {
+			isa = PBXGroup;
+			children = (
+				1859C6741FA7CCE800BFE8B1 /* NetworkViewController.swift */,
+			);
+			path = "4) Network";
+			sourceTree = "<group>";
+		};
+		1859C6761FA7CD8F00BFE8B1 /* 2) Read Stored Data */ = {
+			isa = PBXGroup;
+			children = (
+				1859C6771FA7CD8F00BFE8B1 /* ReadStoredDataViewController.swift */,
+			);
+			path = "2) Read Stored Data";
 			sourceTree = "<group>";
 		};
 		18BF4FA91F97EFC200860706 /* 0) Main */ = {
@@ -153,11 +168,12 @@
 		18E23FEF1F96A2F200776F78 /* RXSwiftSampler */ = {
 			isa = PBXGroup;
 			children = (
-				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18BF4FA91F97EFC200860706 /* 0) Main */,
 				181ACAA01F96C7620047DC33 /* 1) Login Validator */,
-				18BF4FA61F97EB8800860706 /* 2) Read Stored Data */,
-				18E311A01FA292B7004E5E67 /* 3) Collection */,
+				1859C6761FA7CD8F00BFE8B1 /* 2) Read Stored Data */,
+				1859C6701FA7CCD400BFE8B1 /* 3) Collection */,
+				1859C6731FA7CCE800BFE8B1 /* 4) Network */,
+				18E23FF41F96A2F200776F78 /* Main.storyboard */,
 				18E23FF01F96A2F200776F78 /* AppDelegate.swift */,
 				18E23FF71F96A2F200776F78 /* Assets.xcassets */,
 				18E23FF91F96A2F200776F78 /* LaunchScreen.storyboard */,
@@ -173,15 +189,6 @@
 				18E240071F96A2F200776F78 /* Info.plist */,
 			);
 			path = RXSwiftSamplerTests;
-			sourceTree = "<group>";
-		};
-		18E311A01FA292B7004E5E67 /* 3) Collection */ = {
-			isa = PBXGroup;
-			children = (
-				18E311A11FA29305004E5E67 /* CollectionViewController.swift */,
-			);
-			name = "3) Collection";
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E23FFB1F96A2F200776F78 /* LaunchScreen.storyboard in Resources */,
-				18C75EA51F99221E005A4133 /* Jonathan.txt in Resources */,
 				18E23FF81F96A2F200776F78 /* Assets.xcassets in Resources */,
 				18E23FF61F96A2F200776F78 /* Main.storyboard in Resources */,
 			);
@@ -306,13 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1859C6721FA7CCD400BFE8B1 /* CollectionViewController.swift in Sources */,
 				181ACA9F1F96BEE10047DC33 /* LoginViewController.swift in Sources */,
 				18E23FF31F96A2F200776F78 /* MainViewController.swift in Sources */,
 				18E23FF11F96A2F200776F78 /* AppDelegate.swift in Sources */,
 				181ACAA21F96C7850047DC33 /* LoginViewModel.swift in Sources */,
-				18E311A21FA29305004E5E67 /* CollectionViewController.swift in Sources */,
 				181ACA9B1F96ADDB0047DC33 /* Chapters.swift in Sources */,
-				18BF4FA81F97EBC500860706 /* ReadStoredDataViewController.swift in Sources */,
+				1859C6751FA7CCE800BFE8B1 /* NetworkViewController.swift in Sources */,
+				1859C6781FA7CD8F00BFE8B1 /* ReadStoredDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

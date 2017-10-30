@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         RxProject(topic: .one, name: "Login Validator", chapter: "Variable"),
         RxProject(topic: .two, name: "File I/O", chapter: "Variable, Bind, Single"),
         RxProject(topic: .three, name: "Serg Dort", chapter: "Collection"),
-        RxProject(name: "Mo Ramezanpoor", chapter: "mohsenr"),
+        RxProject(topic: .four, name: "Github", chapter: "Networking"),
         RxProject(name: "Carlos García", chapter: "carlosypunto"),
         RxProject(name: "Scott Gardner", chapter: "scotteg"),
         RxProject(name: "Nobuo Saito", chapter: "tarunon"),
@@ -61,6 +61,11 @@ class MainViewController: UIViewController {
                     if let vc = self.storyboard?.instantiateViewController(withIdentifier: "CollectionVC") {
                         self.present(vc, animated: true, completion: nil)
                     }
+                case .four:
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NetworkVC") {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                    
                 default:
                     print("default")
                 }
