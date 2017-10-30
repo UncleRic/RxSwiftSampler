@@ -7,10 +7,12 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class NetworkViewController: UIViewController {
 
     @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet weak var tableView: UITableView!
     
     let disposeBag = DisposeBag()
     

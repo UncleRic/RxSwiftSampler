@@ -313,18 +313,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-A4-kbm">
-                                <rect key="frame" x="138" y="38" width="115" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-A4-kbm">
+                                <rect key="frame" x="179.66666666666666" y="36" width="73.333333333333343" height="37"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="23"/>
                                 <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-sw-rQq">
+                                <rect key="frame" x="1" y="132" width="413" height="634"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ocf-2k-orq">
+                                        <rect key="frame" x="0.0" y="28" width="413" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ocf-2k-orq" id="sbK-W1-EpB">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="63.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZw-Nj-OZy" userLabel="Title">
+                                                    <rect key="frame" x="15" y="5" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deq-2c-6EI" userLabel="SubTitle">
+                                                    <rect key="frame" x="15" y="34" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.77363037999999995" green="1" blue="0.94208932970000003" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="pY0-3K-vNQ" firstAttribute="leading" secondItem="6EG-A4-kbm" secondAttribute="trailing" constant="-253" id="3oS-3v-fEc"/>
                             <constraint firstItem="pY0-3K-vNQ" firstAttribute="top" secondItem="6EG-A4-kbm" secondAttribute="bottom" constant="-53" id="Isb-tn-sVP"/>
+                            <constraint firstItem="6EG-A4-kbm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HZJ-8d-WUM" secondAttribute="leading" constant="20" symbolic="YES" id="lhB-Ue-l3K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pY0-3K-vNQ"/>
                         <connections>
@@ -333,6 +365,7 @@
                     </view>
                     <connections>
                         <outlet property="swipeGestureRecognizer" destination="pa7-r1-WZm" id="nYd-Yx-W8O"/>
+                        <outlet property="tableView" destination="5E5-sw-rQq" id="i4Q-bE-21J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmO-rR-3n9" userLabel="First Responder" sceneMemberID="firstResponder"/>
