@@ -10,22 +10,58 @@ import RxSwift
 import RxCocoa
 
 class NetworkViewController: UIViewController {
-
+    
     @IBOutlet var swipeGestureRecognizer: UISwipeGestureRecognizer!
     @IBOutlet weak var tableView: UITableView!
     
+    let searchController = UISearchController(searchResultsController: nil)
+    var searchBar: UISearchBar { return searchController.searchBar }
+    
     let disposeBag = DisposeBag()
+    var viewModel = ViewModel()
+    
+    // -----------------------------------------------------------------------------------------------------
+    // UIViewController Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         swipeGestureRecognizer.rx.event
-            .bind { [unowned self] _ in
-                print("Swipe Gesture")
+            .bind { [unowned self] _ in 
                 self.view.endEditing(true)
                 self.dismiss(animated: true, completion: nil)
+                
             }
             .disposed(by: disposeBag)
+        
+        configureSearchController()
+        
+        viewModel.data
+            .drive(tableView.rx.items(cellIdentifier: "Cell")) { _, repository, cell in
+                cell.textLabel?.text = repository.name
+                cell.detailTextLabel?.text = repository.url
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.text.orEmpty
+            .bind(to: viewModel.searchText)
+            .disposed(by: disposeBag)
+        
+        viewModel.data.asDriver()
+            .map { "\($0.count) Repositories" }
+            .drive(navigationItem.rx.title)
+            .disposed(by: disposeBag)
     }
-
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func configureSearchController() {
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchBar.showsCancelButton = true
+        searchBar.text = "scotteg"
+        searchBar.placeholder = "Enter Github ID (e.g. \"scotteg\")"
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+    }
+    
 }
