@@ -16,7 +16,9 @@ struct Repository {
 }
 
 class ViewModel {
+    
     let searchText = Variable("")
+    
     lazy var data: Driver<[Repository]> = {
        return self.searchText.asObservable()
         .throttle(0.3, scheduler: MainScheduler.instance)
