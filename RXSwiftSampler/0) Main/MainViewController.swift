@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "RxSwift Sampler"
         data.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "Cell")) { (_, rxProject, cell) in
                 // Configure each cell (without the dequeuing):
@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
                         self.present(vc, animated: true, completion: nil)
                     }
                 case .four:
-                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NetworkVC") {
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NavNetworkVC") {
                         self.present(vc, animated: true, completion: nil)
                     }
                     
