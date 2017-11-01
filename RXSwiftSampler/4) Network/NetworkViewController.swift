@@ -24,7 +24,7 @@ class NetworkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.searchBar.delegate = self
         swipeGestureRecognizer.rx.event
             .bind { [unowned self] _ in 
                 self.view.endEditing(true)
@@ -50,9 +50,12 @@ class NetworkViewController: UIViewController {
             .filter {item in
                 item.count > 3
             }
-            .subscribe(onNext: {txtCharacter in
+            .subscribe(onNext: { (txtCharacter) in
                 print("txtCharacter: \(txtCharacter)")
-            }).disposed(by:disposeBag)
+            }, onCompleted: {
+                print("---- Completed! -----")
+            })
+            .disposed(by:disposeBag)
         
         viewModel.data.asDriver()
             .map { "\($0.count) Repositories" }
@@ -70,6 +73,12 @@ class NetworkViewController: UIViewController {
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
     }
-    
 }
 
+// ==========================================================================================================
+
+extension NetworkViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("--- Cancel Action ---")
+    }
+}
