@@ -20,6 +20,8 @@ class ReadStoredDataViewController: UIViewController {
     @IBOutlet weak var readwriteToggle: UISwitch!
     
     var IOButton = Variable(false)
+    let theFile = "TextStuff.txt"
+    var fileURL: URL?
     
     let disposeBag = DisposeBag()
     
@@ -32,6 +34,12 @@ class ReadStoredDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return
+        }
+        
+        fileURL = dir.appendingPathComponent(theFile)
         
         let onOffSwitch = Variable(true)
         
@@ -65,30 +73,21 @@ class ReadStoredDataViewController: UIViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    private func contentsOfTextFile(named name: String) -> Single<String> {
-        guard let path = Bundle.main.path(forResource: name, ofType: "txt") else {
-            print(FileReadError.fileNotFound)
-            return Single.just("File Not Found")
+    private func contentsOfTextFile() -> Single<String> {
+        if let contents = try? String(contentsOf: fileURL!, encoding: .utf8) {
+            return Single.just(contents)
         }
-        
-        guard let data = FileManager.default.contents(atPath: path) else {
-            return Single.just("File Unreadable")
-        }
-        
-        guard let contents = String(data:data, encoding:.utf8) else {
-            return Single.just("File Encoding Failed")
-        }
-        
-        return Single.just(contents)
+        return Single.just("Sorry... unable to access file.")
     }
     
     // -----------------------------------------------------------------------------------------------------
     
     private func readFromDisk() {
-        contentsOfTextFile(named: "Jonathan")
+        contentsOfTextFile()
             .subscribe {
                 switch $0 {
                 case .success(let string):
+                    self.textView.textColor = .black
                     self.textView.text = string
                 case .error(let error):
                     self.textView.text = error.localizedDescription
@@ -102,15 +101,18 @@ class ReadStoredDataViewController: UIViewController {
     // Action Methods
     
     @IBAction func writeAction() {
-        
-        guard let path = Bundle.main.path(forResource: "Jonathan", ofType: "txt") else {
-            print(FileReadError.fileNotFound)
+        guard let fileURL = fileURL else {
             return
         }
-        do {
-            try textView.text.write(toFile: path, atomically: true, encoding: .utf8)
-        } catch {
-            textView.text = "Error: \(error.localizedDescription)"
+        if let text = textView.text {
+            do {
+                try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            } catch {
+                print("error: \(error.localizedDescription)")
+                return
+            }
         }
+        textView.text = "...file has been written."
+        textView.textColor = .gray
     }
 }
