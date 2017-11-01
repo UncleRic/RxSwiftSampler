@@ -17,7 +17,7 @@ struct Repository {
 
 class ViewModel {
     
-    let searchText = Variable("")
+    var searchText = Variable("")
     
     lazy var data: Driver<[Repository]> = {
        return self.searchText.asObservable()

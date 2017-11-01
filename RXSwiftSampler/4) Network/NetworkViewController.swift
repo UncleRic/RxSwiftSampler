@@ -68,7 +68,7 @@ class NetworkViewController: UIViewController {
     func configureSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchBar.showsCancelButton = true
-        searchBar.text = "scotteg"
+        searchBar.text = ""
         searchBar.placeholder = "Enter Github ID (e.g. \"scotteg\")"
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
@@ -80,5 +80,6 @@ class NetworkViewController: UIViewController {
 extension NetworkViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print("--- Cancel Action ---")
+        viewModel.searchText.value = ""
     }
 }
